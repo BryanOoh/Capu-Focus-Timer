@@ -208,7 +208,7 @@ h1 {
   left: -30px;
   width: 100px;
   height: 80px;
-  background: rgba(200, 162, 124, 0.1);
+  background: rgba(139, 89, 59, 0.1);
   border-radius: 50%;
   filter: blur(15px);
 }
