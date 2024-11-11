@@ -155,7 +155,7 @@ h1 {
   }
   
   .timer-container {
-    width: 95%;
+    width: 100%;
     padding: 1.5rem;
   }
   
@@ -206,9 +206,9 @@ h1 {
   position: absolute;
   top: -30px;
   left: -30px;
-  width: 80px;
+  width: 100px;
   height: 80px;
-  background: rgba(139, 89, 59, 0.1);
+  background: rgba(200, 162, 124, 0.1);
   border-radius: 50%;
   filter: blur(15px);
 }
