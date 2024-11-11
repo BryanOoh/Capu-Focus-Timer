@@ -7,7 +7,13 @@ function App() {
   const [isActive, setIsActive] = useState(false);
   const [mode, setMode] = useState('work');
   const [selectedTime, setSelectedTime] = useState(25);
-  const [message, setMessage] = useState('⭐ 준비됐지? 이제 진짜로 일해보자! (진짜로…) ⭐');
+  const [message, setMessage] = useState(
+    '이제 진짜로 일해보자! (진짜로…) ⭐'
+  );
+
+  // Calculate total time left in seconds
+  const timeLeft = minutes * 60 + seconds;
+  const totalTime = selectedTime * 60;
 
   useEffect(() => {
     let interval;
@@ -90,8 +96,15 @@ function App() {
   return (
     <div className="App">
       <div className="timer-container">
-        <h1>Capu-Focus Timer ☕</h1>
+        <div 
+          className="coffee-fill" 
+          style={{ 
+            height: `${(timeLeft / totalTime) * 100}%`
+          }}
+        />
+        <h1>Capu-Focus Timer</h1>
         <div className="time-selector">
+
           <button 
             className={`time-button ${selectedTime === 1 ? 'active' : ''}`}
             onClick={() => changeTime(1)}
@@ -116,14 +129,20 @@ function App() {
           >
             25 min
           </button>
+          {/* <button 
+            className={`time-button ${selectedTime === 60 ? 'active' : ''}`}
+            onClick={() => changeTime(60)}
+          >
+            60 min
+          </button> */}
         </div>
         <div className="message-display">
           {message}
         </div>
-        <div className="mode-indicator">
+        {/* <div className="mode-indicator">
         {mode === 'work' ? '🎯 Focus Session' : '☕ Break Time'}
 
-        </div>
+        </div> */}
         <div className="timer">
           {String(minutes).padStart(2, '0')}:{String(seconds).padStart(2, '0')}
         </div>
@@ -133,8 +152,7 @@ function App() {
           </button>
           <button onClick={resetTimer} className="control-button">↺ Reset</button>
         </div>
-        <h4> Bryan과 커피가 빚어낸 작품! <br />즐겁게 사용할 수 있길 바라요! 😄</h4>
-
+        <br /><h4> Bryan과 커피가 빚어낸 작품! <br />즐겁게 사용할 수 있길 바라요! 😄</h4>
       </div>
     </div>
   );

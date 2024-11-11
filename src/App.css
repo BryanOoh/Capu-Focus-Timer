@@ -9,46 +9,13 @@
 }
 
 .timer-container {
-  background: rgba(44, 24, 16, 0.95);
-  backdrop-filter: blur(10px);
-  padding: 3rem 4rem;
-  border-radius: 24px;
-  box-shadow: 
-    0 4px 24px -1px rgba(0, 0, 0, 0.3),
-    0 0 0 1px rgba(255, 255, 255, 0.1);
-  width: 450px;
   position: relative;
-  overflow: hidden;
-}
-
-.coffee-steam {
-  position: absolute;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.coffee-steam span {
-  position: absolute;
-  height: 50px;
-  width: 8px;
   background: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  animation: steam 2s infinite ease-in-out;
-}
-
-.coffee-steam span:nth-child(1) {
-  left: -20px;
-  animation-delay: 0.2s;
-}
-
-.coffee-steam span:nth-child(2) {
-  animation-delay: 0.4s;
-}
-
-.coffee-steam span:nth-child(3) {
-  left: 20px;
-  animation-delay: 0.6s;
+  border-radius: 0% 0% 31% 31%;  
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  z-index: 1;
 }
 
 @keyframes steam {
@@ -66,7 +33,7 @@
 }
 
 h1 {
-  font-size: 2.2rem;
+  font-size: 2.7rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
   background: linear-gradient(to right, #c8a27c 0%, #8b593b 100%);
@@ -82,6 +49,8 @@ h1 {
   letter-spacing: -2px;
   color: #c8a27c;
   text-shadow: 0 0 20px rgba(200, 162, 124, 0.3);
+  position: relative;
+  z-index: 2;
 }
 
 .mode-indicator {
@@ -95,6 +64,8 @@ h1 {
   padding: 0.5rem 1rem;
   border-radius: 12px;
   display: inline-block;
+  position: relative;
+  z-index: 2;
 }
 
 .controls {
@@ -102,6 +73,8 @@ h1 {
   gap: 1.2rem;
   justify-content: center;
   margin-top: 2rem;
+  position: relative;
+  z-index: 2;
 }
 
 .control-button {
@@ -143,6 +116,8 @@ h1 {
   justify-content: center;
   margin-bottom: 1.5rem;
   flex-wrap: wrap;
+  position: relative;
+  z-index: 2;
 }
 
 .time-button {
@@ -236,4 +211,15 @@ h1 {
   background: rgba(139, 89, 59, 0.1);
   border-radius: 50%;
   filter: blur(15px);
+}
+
+.coffee-fill {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(135deg, #70482f 0%, #2e1e13 100%);
+
+  transition: height 0.3s ease-out;
+  z-index: -1;
 }
